@@ -14,8 +14,11 @@ export function hashToBigInt(id: string): bigint {
 }
 
 export function randomSecret(): bigint {
-  return bigintCrypto.randBetween(BigInt(2), P - BigInt(2));
+  const bytes = crypto.randomBytes(32); // 256 bits de entropía
+  const hex = bytes.toString("hex");
+  return (BigInt("0x" + hex) % (P - BigInt(2))) + BigInt(2);
 }
+
 
 export async function modPow(base: bigint, exp: bigint): Promise<bigint> {
   return bigintCrypto.modPow(base, exp, P);
