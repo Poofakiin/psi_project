@@ -1,0 +1,18 @@
+{
+  "name": "psi-project",
+  "version": "1.0.0",
+  "scripts": {
+    "start:A": "ts-node src/clinicServer.ts --port 3001 --name A --data datasets/clinicA.json --peer http://localhost:3002",
+    "start:B": "ts-node src/clinicServer.ts --port 3002 --name B --data datasets/clinicB.json --peer http://localhost:3001"
+  },
+  "dependencies": {
+    "bigint-crypto-utils": "^3.3.0",
+    "fastify": "^4.22.0",
+    "minimist": "^1.2.7"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  }
+}
