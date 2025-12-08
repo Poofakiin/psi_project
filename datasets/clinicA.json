@@ -1,0 +1,62 @@
+[
+  {
+    "id": "18.345.221-3",
+    "age": 45,
+    "historial": "Hipertensión arterial",
+    "sistema": "FONASA"
+  },
+  {
+    "id": "16.778.990-1",
+    "age": 34,
+    "historial": "Asma bronquial",
+    "sistema": "ISAPRE"
+  },
+  {
+    "id": "14.223.876-9",
+    "age": 52,
+    "historial": "Diabetes tipo 2",
+    "sistema": "FONASA"
+  },
+  {
+    "id": "19.003.774-5",
+    "age": 28,
+    "historial": "Embarazo controlado",
+    "sistema": "ISAPRE"
+  },
+  {
+    "id": "11.998.332-7",
+    "age": 61,
+    "historial": "Enfermedad coronaria",
+    "sistema": "FONASA"
+  },
+  {
+    "id": "20.112.455-8",
+    "age": 39,
+    "historial": "Colesterol alto",
+    "sistema": "ISAPRE"
+  },
+  {
+    "id": "13.444.999-0",
+    "age": 47,
+    "historial": "Hipotiroidismo",
+    "sistema": "FONASA"
+  },
+  {
+    "id": "17.665.120-2",
+    "age": 25,
+    "historial": "Controles generales",
+    "sistema": "ISAPRE"
+  },
+  {
+    "id": "15.908.441-6",
+    "age": 56,
+    "historial": "Insuficiencia renal crónica",
+    "sistema": "FONASA"
+  },
+  {
+    "id": "21.334.778-4",
+    "age": 31,
+    "historial": "Migraña crónica",
+    "sistema": "ISAPRE"
+  }
+]

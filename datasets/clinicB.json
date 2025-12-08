@@ -1,0 +1,62 @@
+[
+  {
+    "id": "14.223.876-9",
+    "age": 52,
+    "historial": "Diabetes tipo 2",
+    "sistema": "ISAPRE"
+  },
+  {
+    "id": "11.998.332-7",
+    "age": 61,
+    "historial": "Enfermedad coronaria",
+    "sistema": "FONASA"
+  },
+  {
+    "id": "17.665.120-2",
+    "age": 25,
+    "historial": "Controles generales",
+    "sistema": "ISAPRE"
+  },
+  {
+    "id": "21.334.778-4",
+    "age": 31,
+    "historial": "Migraña crónica",
+    "sistema": "FONASA"
+  },
+  {
+    "id": "10.556.441-9",
+    "age": 44,
+    "historial": "Lumbalgia crónica",
+    "sistema": "FONASA"
+  },
+  {
+    "id": "12.889.774-1",
+    "age": 37,
+    "historial": "Anemia ferropénica",
+    "sistema": "ISAPRE"
+  },
+  {
+    "id": "22.445.998-0",
+    "age": 29,
+    "historial": "Trastorno de ansiedad",
+    "sistema": "ISAPRE"
+  },
+  {
+    "id": "19.887.443-2",
+    "age": 68,
+    "historial": "Alzheimer en etapa inicial",
+    "sistema": "FONASA"
+  },
+  {
+    "id": "16.112.009-5",
+    "age": 50,
+    "historial": "Artrosis severa",
+    "sistema": "FONASA"
+  },
+  {
+    "id": "13.777.220-8",
+    "age": 41,
+    "historial": "Gastritis crónica",
+    "sistema": "ISAPRE"
+  }
+]
