@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clínica B - Sistema PSI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #022c22, #064e3b);
+      color: #ecfeff;
+      padding: 40px;
+    }
+
+    .panel {
+      max-width: 800px;
+      margin: auto;
+      background: #022c22;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      color: #2dd4bf;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background: #0d9488;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #0f766e;
+    }
+
+    pre {
+      background: #022c22;
+      border: 1px solid #134e4a;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #134e4a;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="panel">
+    <div class="badge">Sucursal Centro</div>
+
+    <h1>Clínica B - Módulo de Interoperabilidad PSI</h1>
+
+    <p>
+      Este panel corresponde al sistema de la Clínica B.
+      Desde aquí también puede ejecutarse el protocolo PSI
+      como verificación cruzada con la Clínica A.
+    </p>
+
+    <p>
+      El sistema garantiza que solamente se revelan los pacientes
+      que pertenecen a la intersección.
+    </p>
+
+    <button onclick="runPSI()">Ejecutar Protocolo PSI</button>
+
+    <pre id="result">Esperando ejecución...</pre>
+  </div>
+
+  <script>
+    async function runPSI() {
+      const output = document.getElementById("result");
+      output.textContent = "Ejecutando protocolo PSI desde Clínica B...\n";
+
+      try {
+        const res = await fetch("http://localhost:3002/run");
+
+        if (!res.ok) {
+          throw new Error("Error HTTP: " + res.status);
+        }
+
+        const data = await res.json();
+
+        output.textContent =
+          "RESULTADO PSI (Clínica B)\n\n" +
+          JSON.stringify(data, null, 2);
+
+      } catch (err) {
+        output.textContent = "Error al ejecutar PSI:\n" + err;
+      }
+    }
+  </script>
+
+</body>
+</html>

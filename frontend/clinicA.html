@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clínica A - Sistema PSI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #020617, #0f172a);
+      color: white;
+      padding: 40px;
+    }
+
+    .card {
+      max-width: 800px;
+      margin: auto;
+      background: #020617;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      color: #38bdf8;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background: #2563eb;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    pre {
+      background: #020617;
+      border: 1px solid #1e293b;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #1e293b;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="tag">Sucursal Norte</div>
+
+    <h1>Clínica A - Sistema PSI</h1>
+
+    <p>
+      Este panel permite a la Clínica A ejecutar el protocolo de
+      Private Set Intersection con la Clínica B.
+    </p>
+
+    <ul>
+      <li>Se calcula la intersección de pacientes</li>
+      <li>Se obtiene el tamaño del conjunto común</li>
+      <li>Se calcula la edad promedio</li>
+      <li>No se revelan pacientes fuera de la intersección</li>
+    </ul>
+
+    <button onclick="runPSI()">Ejecutar Protocolo PSI</button>
+
+    <pre id="result">Esperando ejecución...</pre>
+  </div>
+
+  <script>
+    async function runPSI() {
+      const output = document.getElementById("result");
+      output.textContent = "Ejecutando protocolo PSI desde Clínica A...\n";
+
+      try {
+        const res = await fetch("http://localhost:3001/run");
+
+        if (!res.ok) {
+          throw new Error("Error HTTP: " + res.status);
+        }
+
+        const data = await res.json();
+
+        output.textContent =
+          "RESULTADO PSI (Clínica A)\n\n" +
+          JSON.stringify(data, null, 2);
+
+      } catch (err) {
+        output.textContent = "Error al ejecutar PSI:\n" + err;
+      }
+    }
+  </script>
+
+</body>
+</html>

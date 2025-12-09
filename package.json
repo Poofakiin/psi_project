@@ -4,14 +4,12 @@
   "description": "Private Set Intersection (DH-PSI) con estadísticas en TypeScript",
   "type": "commonjs",
   "scripts": {
-    "start:A": "ts-node src/clinicServer.ts --port 3001 --name A --data datasets/clinicA.json --peer http://localhost:3002",
-    "start:B": "ts-node src/clinicServer.ts --port 3002 --name B --data datasets/clinicB.json --peer http://localhost:3001",
     "build": "tsc",
-    "start:dist:A": "node dist/clinicServer.js --port 3001 --name A --data datasets/clinicA.json --peer http://localhost:3002",
-    "start:dist:B": "node dist/clinicServer.js --port 3002 --name B --data datasets/clinicB.json --peer http://localhost:3001"
-  },
+    "start:A": "ts-node src/clinicServer.ts --port 3001 --name A --data datasets/clinicA.json",
+    "start:B": "ts-node src/clinicServer.ts --port 3002 --name B --data datasets/clinicB.json"
+    },
   "dependencies": {
-    "@fastify/cors": "^11.1.0",
+    "@fastify/cors": "^8.5.0",
     "bigint-crypto-utils": "^3.3.0",
     "fastify": "^4.22.0",
     "minimist": "^1.2.7"

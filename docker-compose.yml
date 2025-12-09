@@ -1,18 +1,14 @@
 services:
   clinica:
     build: .
-    image: psi_project_clinica
-    command: npm run start:A
+    container_name: clinica
+    command: node dist/clinicServer.js --port 3001 --name A --data datasets/clinicA.json --peer http://clinicb:3002
     ports:
       - "3001:3001"
-    volumes:
-      - .:/app
 
   clinicb:
     build: .
-    image: psi_project_clinicb
-    command: npm run start:B
+    container_name: clinicb
+    command: node dist/clinicServer.js --port 3002 --name B --data datasets/clinicB.json --peer http://clinica:3001
     ports:
       - "3002:3002"
-    volumes:
-      - .:/app
