@@ -1,0 +1,18 @@
+services:
+  clinica:
+    build: .
+    image: psi_project_clinica
+    command: npm run start:A
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+
+  clinicb:
+    build: .
+    image: psi_project_clinicb
+    command: npm run start:B
+    ports:
+      - "3002:3002"
+    volumes:
+      - .:/app
