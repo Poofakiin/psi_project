@@ -81,7 +81,7 @@ node dist/clinicServer.js --port 3002 --name B --data datasets/clinicB.json --pe
 
 ---
 
-## Uso con Docker
+## Uso con Docker (recomendado)
 
 Construir las imágenes:
 
@@ -107,6 +107,7 @@ Los archivos del frontend están en la carpeta frontend:
 - clinicaB.html  
 
 Cada uno permite ejecutar el protocolo PSI desde el navegador para su respectiva clínica.
+Son solo html puros, por lo que para ejecutarlos simplemente deberán de abrirlos.
 
 ---
 
