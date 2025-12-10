@@ -1,13 +1,14 @@
 {
   "name": "psi-project",
   "version": "1.0.0",
-  "description": "Private Set Intersection (DH-PSI) con estadísticas en TypeScript",
+  "description": "Private Set Intersection (DH-PSI) con estadísticas y Oblivious Hashing en TypeScript",
   "type": "commonjs",
   "scripts": {
     "build": "tsc",
-    "start:A": "ts-node src/clinicServer.ts --port 3001 --name A --data datasets/clinicA.json",
-    "start:B": "ts-node src/clinicServer.ts --port 3002 --name B --data datasets/clinicB.json"
-    },
+    "start:oblivious": "ts-node src/oblivious.ts --port 4000",
+    "start:A": "ts-node src/clinicServer.ts --port 3001 --name A --data datasets/clinicA.json --peer http://localhost:3002 --oblivious http://localhost:4000",
+    "start:B": "ts-node src/clinicServer.ts --port 3002 --name B --data datasets/clinicB.json --peer http://localhost:3001 --oblivious http://localhost:4000"
+  },
   "dependencies": {
     "@fastify/cors": "^8.5.0",
     "bigint-crypto-utils": "^3.3.0",

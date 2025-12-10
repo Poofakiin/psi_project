@@ -1,14 +1,38 @@
+version: "3.8"
+
 services:
+  oblivious:
+    build: .
+    container_name: oblivious
+    command: node dist/oblivious.js --port 4000
+    ports:
+      - "4000:4000"
+    networks:
+      - psi-net
+
   clinica:
     build: .
     container_name: clinica
-    command: node dist/clinicServer.js --port 3001 --name A --data datasets/clinicA.json --peer http://clinicb:3002
+    command: node dist/clinicServer.js --port 3001 --name A --data datasets/clinicA.json --peer http://clinicb:3002 --oblivious http://oblivious:4000
     ports:
       - "3001:3001"
+    depends_on:
+      - oblivious
+      - clinicb
+    networks:
+      - psi-net
 
   clinicb:
     build: .
     container_name: clinicb
-    command: node dist/clinicServer.js --port 3002 --name B --data datasets/clinicB.json --peer http://clinica:3001
+    command: node dist/clinicServer.js --port 3002 --name B --data datasets/clinicB.json --peer http://clinica:3001 --oblivious http://oblivious:4000
     ports:
       - "3002:3002"
+    depends_on:
+      - oblivious
+    networks:
+      - psi-net
+
+networks:
+  psi-net:
+    driver: bridge

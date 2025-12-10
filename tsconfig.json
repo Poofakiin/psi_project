@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
-    "target": "ES2015",
+    "target": "ES2020",
     "module": "nodenext",
-    "lib": ["ES2015", "ES2020"],
+    "lib": ["ES2020"],
+
     "moduleResolution": "nodenext",
 
     "outDir": "dist",
